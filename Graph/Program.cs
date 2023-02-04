@@ -5,49 +5,33 @@ namespace Graph
 {
     class Program
     {
-        // 스택 : LIFO(후입선출 Last in First Out)
-        // 큐 : FIFO(선입선출 First in First Out)
+        class Graph
+        {
+            int[,] adj = new int[6, 6]
+            {
+                { 0,1,0,1,0,0},
+                { 1,0,1,1,0,0},
+                { 0,1,0,0,0,0},
+                { 1,1,0,0,1,0},
+                { 0,0,0,1,0,1},
+                { 0,0,0,0,1,0},
+            };
+
+            List<int>[] adj2 = new List<int>[]
+            {
+                new List<int>() { 1, 3 },
+                new List<int>() { 0, 2, 3 },
+                new List<int>() { 1 },
+                new List<int>() { 0, 1, 4 },
+                new List<int>() { 3, 5 },
+                new List<int>() { 4 },
+            };
+        }
 
         static void Main(string[] args)
         {
-            Stack<int> stack = new Stack<int>();
-            stack.Push(101);    // 값을 집어넣는다
-            stack.Push(102);
-            stack.Push(103);
-            stack.Push(104);
-            stack.Push(105);
-
-            if(stack.Count > 0)     // 예외처리 예방
-            {
-                int data = stack.Pop();     // 값을 빼낸다
-                int data2 = stack.Peek();    // 마지막에 들어간 값을 검사한다
-            }
-
-            Queue<int> queue = new Queue<int>();
-            queue.Enqueue(101);
-            queue.Enqueue(102);
-            queue.Enqueue(103);
-            queue.Enqueue(104);
-            queue.Enqueue(105);
-
-            if(queue.Count >0)
-            {
-                int data3 = queue.Dequeue();
-                int data4 = queue.Peek();
-            }
-
-            LinkedList<int> list = new LinkedList<int>();
-            list.AddLast(101);
-            list.AddLast(102);
-            list.AddLast(103);
-
-            // FIFO
-            int value1 = list.First.Value;
-            list.RemoveFirst();
-
-            // LIFO
-            int value2 = list.Last.Value;
-            list.RemoveLast();
+            // DFS (Depth First Search 깊이 우선 탐색)
+            // BFS (Breadth First Search 너비 우선 탐색)
         }
     }
 }
